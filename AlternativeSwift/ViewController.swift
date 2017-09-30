@@ -58,8 +58,6 @@ class ViewController: NSViewController {
             }
         }
         
-        
-        
         containerView.wantsLayer = true
         containerView.layer?.backgroundColor = NSColor.red.cgColor
         
@@ -70,17 +68,21 @@ class ViewController: NSViewController {
     }
     
     func jsonFromFile() -> [SavedFilePosition] {
-        let data = try! Data(contentsOf: filePathsPositionsFileURL)
-        let json = try! JSONSerialization.jsonObject(
-            with: data, options: .mutableContainers) as! [[String: Any]]
-        return json.map {
-            dictionary in
-            let filePath = dictionary["filePath"] as! String
-            let position = dictionary["position"] as! [String: CGFloat]
-            
-            return SavedFilePosition(filePath: filePath,
-                                     point: CGPoint(x: position["x"]!,
-                                                    y: position["y"]!))
+        do {
+            let data = try Data(contentsOf: filePathsPositionsFileURL)
+            let json = try JSONSerialization.jsonObject(
+                with: data, options: .mutableContainers) as! [[String: Any]]
+            return json.map {
+                dictionary in
+                let filePath = dictionary["filePath"] as! String
+                let position = dictionary["position"] as! [String: CGFloat]
+                
+                return SavedFilePosition(filePath: filePath,
+                                         point: CGPoint(x: position["x"]!,
+                                                        y: position["y"]!))
+            }
+        } catch {
+            return []
         }
     }
     
