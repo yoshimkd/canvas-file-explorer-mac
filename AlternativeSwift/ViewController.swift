@@ -21,12 +21,31 @@ class FileView {
     
 }
 
+struct SavedFilePosition {
+    
+    let filePath: String
+    let point: CGPoint
+    
+}
+
 class ViewController: NSViewController {
     
+    @IBOutlet private weak var containerView: NSView!
+    
+    var filePathsPositionsFileURL: URL!
+    
     var fileViews = [FileView]()
+    var savedFilesPositions: [SavedFilePosition]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let documentsDirectoryUrl = FileManager.default.urls(
+            for: .documentDirectory, in: .userDomainMask)[0]
+        filePathsPositionsFileURL = documentsDirectoryUrl
+            .appendingPathComponent("filePathsPositions.json")
+        
+        savedFilesPositions = jsonFromFile()
         
         let openPanel = NSOpenPanel()
         openPanel.canChooseFiles = false
@@ -34,10 +53,48 @@ class ViewController: NSViewController {
         
         openPanel.begin {
             [unowned self] result in
-            if result == NSFileHandlingPanelOKButton {
+            if result.rawValue == NSFileHandlingPanelOKButton {
                 self.drawFilesFromRoot(directory: openPanel.url!.path)
             }
         }
+        
+        
+        
+        containerView.wantsLayer = true
+        containerView.layer?.backgroundColor = NSColor.red.cgColor
+        
+        let panRecognizer = NSPanGestureRecognizer(
+            target: self,
+            action: #selector(ViewController.handlePan(sender:)))
+        containerView.addGestureRecognizer(panRecognizer)
+    }
+    
+    func jsonFromFile() -> [SavedFilePosition] {
+        let data = try! Data(contentsOf: filePathsPositionsFileURL)
+        let json = try! JSONSerialization.jsonObject(
+            with: data, options: .mutableContainers) as! [[String: Any]]
+        return json.map {
+            dictionary in
+            let filePath = dictionary["filePath"] as! String
+            let position = dictionary["position"] as! [String: CGFloat]
+            
+            return SavedFilePosition(filePath: filePath,
+                                     point: CGPoint(x: position["x"]!,
+                                                    y: position["y"]!))
+        }
+    }
+    
+    func dictionaryToJSONString(dictionary: [[String: Any]]) -> String {
+        let theJSONData =
+            try! JSONSerialization.data(withJSONObject: dictionary)
+        return String(data: theJSONData,
+                      encoding: .ascii)!
+    }
+    
+    func writeToFile(string: String) {
+        try! string.write(to: filePathsPositionsFileURL,
+                          atomically: true,
+                          encoding: .utf8)
     }
     
     func drawFilesFromRoot(directory: String) {
@@ -52,11 +109,18 @@ class ViewController: NSViewController {
                     .lastPathComponent as NSString).deletingPathExtension)
                 
                 let fileView = NSTextField(labelWithString: fileName)
-                fileView.frame.origin = CGPoint(x: 50, y: 50)
+                
+                if let savedFilePosition =
+                    savedFilesPositions.first(where: {
+                        savedFilePosition in
+                        return filePath == savedFilePosition.filePath
+                    }) {
+                    fileView.frame.origin = savedFilePosition.point
+                } else {
+                    fileView.frame.origin = CGPoint(x: 50, y: 50)
+                }
+                
                 fileView.drawsBackground = true
-                fileView.backgroundColor = NSColor.black
-                fileView.textColor = NSColor.white
-                view.addSubview(fileView)
                 
                 let panRecognizer = NSPanGestureRecognizer(
                     target: self,
@@ -68,47 +132,56 @@ class ViewController: NSViewController {
                     action: #selector(ViewController.handleTap(sender:)))
                 fileView.addGestureRecognizer(tapRecognizer)
                 
-                view.addSubview(fileView)
+                containerView.addSubview(fileView)
                 
                 return FileView(filePath: filePath, view: fileView)
         }
     }
     
-    func handlePan(sender: NSPanGestureRecognizer) {
+    @objc func handlePan(sender: NSPanGestureRecognizer) {
         if sender.state == .changed || sender.state == .ended {
             let trans = sender.translation(in: sender.view!.superview!)
-            sender.view!.frame.origin = CGPoint(
-                x: sender.view!.frame.origin.x + trans.x,
-                y: sender.view!.frame.origin.y + trans.y)
-            sender.setTranslation(.zero, in: sender.view!.superview!)
+            
+            if sender.view! === containerView {
+                fileViews.forEach({
+                    fileView in
+                    fileView.view!.frame.origin = CGPoint(
+                        x: fileView.view!.frame.origin.x + trans.x / 10,
+                        y: fileView.view!.frame.origin.y + trans.y / 10)
+                })
+            } else {
+                sender.view!.frame.origin = CGPoint(
+                    x: sender.view!.frame.origin.x + trans.x,
+                    y: sender.view!.frame.origin.y + trans.y)
+                sender.setTranslation(.zero, in: sender.view!.superview!)
+            }
         }
     }
     
-    func handleTap(sender: NSClickGestureRecognizer) {
+    @objc func handleTap(sender: NSClickGestureRecognizer) {
         let filePath =
             fileViews.first {
                 fileView in
                 return fileView.view == sender.view
                 }!.filePath
-        NSWorkspace.shared().openFile(filePath)
+        NSWorkspace.shared.openFile(filePath)
     }
     
-}
-
-extension NSView {
+    @IBAction func saveButtonPushHandler(_ sender: NSButton) {
+        let json =
+            fileViews.map {
+                fileView -> [String : Any] in
+                let origin = fileView.view!.frame.origin
+                return ["filePath": fileView.filePath,
+                        "position": ["x": origin.x, "y": origin.y]]
+        }
+        
+        writeToFile(string: dictionaryToJSONString(dictionary: json))
+    }
     
-    var backgroundColor: NSColor? {
-        get {
-            if let colorRef = self.layer?.backgroundColor {
-                return NSColor(cgColor: colorRef)
-            } else {
-                return nil
-            }
-        }
-        set {
-            self.wantsLayer = true
-            self.layer?.backgroundColor = newValue?.cgColor
-        }
+    override func magnify(with event: NSEvent) {
+        containerView.scaleUnitSquare(to: CGSize(
+            width: event.magnification + 1, height: event.magnification + 1))
     }
 }
 

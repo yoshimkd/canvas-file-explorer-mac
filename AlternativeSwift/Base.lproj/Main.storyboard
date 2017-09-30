@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -669,6 +669,9 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="zGQ-kB-SN2"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -685,7 +688,36 @@
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Gbg-w6-2kN" userLabel="Container view">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            </customView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hKl-Cl-lg9" userLabel="Save button">
+                                <rect key="frame" x="416" y="-7" width="70" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="lui-AD-nUm"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aKL-gP-Rqn">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="saveButtonPushHandler:" target="XfG-lQ-9wD" id="a8F-Md-N4y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hKl-Cl-lg9" secondAttribute="trailing" id="0gl-Dp-dFM"/>
+                            <constraint firstAttribute="bottom" secondItem="Gbg-w6-2kN" secondAttribute="bottom" id="5vC-Wb-XHw"/>
+                            <constraint firstItem="Gbg-w6-2kN" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Ljz-9y-kAl"/>
+                            <constraint firstItem="Gbg-w6-2kN" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="TUu-Mm-9gG"/>
+                            <constraint firstAttribute="trailing" secondItem="Gbg-w6-2kN" secondAttribute="trailing" id="Toc-Yy-0Jw"/>
+                            <constraint firstAttribute="bottom" secondItem="hKl-Cl-lg9" secondAttribute="bottom" id="hjE-Vh-Cup"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="Gbg-w6-2kN" id="xsQ-sD-FG5"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
