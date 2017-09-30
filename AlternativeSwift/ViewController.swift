@@ -59,7 +59,11 @@ class ViewController: NSViewController {
         }
         
         containerView.wantsLayer = true
-        containerView.layer?.backgroundColor = NSColor.red.cgColor
+        containerView.layer?.backgroundColor =
+            CGColor(red: 246.0 / 255,
+                    green: 246.0 / 255,
+                    blue: 246.0 / 255,
+                    alpha: 1)
         
         let panRecognizer = NSPanGestureRecognizer(
             target: self,
