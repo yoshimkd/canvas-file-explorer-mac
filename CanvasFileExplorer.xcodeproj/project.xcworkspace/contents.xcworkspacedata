@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:AlternativeSwift.xcodeproj">
+      location = "self:/Users/jovan/workspace/AlternativeSwift/CanvasFileExplorer.xcodeproj">
    </FileRef>
 </Workspace>

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  AlternativeSwift
+//  CanvasFileExplorer
 //
 //  Created by Jovan Jovanovski on 5/28/17.
 //  Copyright © 2017 Jovan. All rights reserved.

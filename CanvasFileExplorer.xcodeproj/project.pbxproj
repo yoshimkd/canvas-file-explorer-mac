@@ -14,7 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C0CA2EF1EDAEFBD000B2F9A /* AlternativeSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlternativeSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C0CA2EF1EDAEFBD000B2F9A /* CanvasFileExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanvasFileExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0CA2F21EDAEFBD000B2F9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C0CA2F41EDAEFBD000B2F9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4C0CA2F61EDAEFBD000B2F9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,7 +36,7 @@
 		4C0CA2E61EDAEFBD000B2F9A = {
 			isa = PBXGroup;
 			children = (
-				4C0CA2F11EDAEFBD000B2F9A /* AlternativeSwift */,
+				4C0CA2F11EDAEFBD000B2F9A /* CanvasFileExplorer */,
 				4C0CA2F01EDAEFBD000B2F9A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,12 +44,12 @@
 		4C0CA2F01EDAEFBD000B2F9A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C0CA2EF1EDAEFBD000B2F9A /* AlternativeSwift.app */,
+				4C0CA2EF1EDAEFBD000B2F9A /* CanvasFileExplorer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4C0CA2F11EDAEFBD000B2F9A /* AlternativeSwift */ = {
+		4C0CA2F11EDAEFBD000B2F9A /* CanvasFileExplorer */ = {
 			isa = PBXGroup;
 			children = (
 				4C0CA2F21EDAEFBD000B2F9A /* AppDelegate.swift */,
@@ -58,15 +58,15 @@
 				4C0CA2F81EDAEFBD000B2F9A /* Main.storyboard */,
 				4C0CA2FB1EDAEFBD000B2F9A /* Info.plist */,
 			);
-			path = AlternativeSwift;
+			path = CanvasFileExplorer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4C0CA2EE1EDAEFBD000B2F9A /* AlternativeSwift */ = {
+		4C0CA2EE1EDAEFBD000B2F9A /* CanvasFileExplorer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C0CA2FE1EDAEFBD000B2F9A /* Build configuration list for PBXNativeTarget "AlternativeSwift" */;
+			buildConfigurationList = 4C0CA2FE1EDAEFBD000B2F9A /* Build configuration list for PBXNativeTarget "CanvasFileExplorer" */;
 			buildPhases = (
 				4C0CA2EB1EDAEFBD000B2F9A /* Sources */,
 				4C0CA2EC1EDAEFBD000B2F9A /* Frameworks */,
@@ -76,9 +76,9 @@
 			);
 			dependencies = (
 			);
-			name = AlternativeSwift;
+			name = CanvasFileExplorer;
 			productName = AlternativeSwift;
-			productReference = 4C0CA2EF1EDAEFBD000B2F9A /* AlternativeSwift.app */;
+			productReference = 4C0CA2EF1EDAEFBD000B2F9A /* CanvasFileExplorer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -98,7 +98,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4C0CA2EA1EDAEFBD000B2F9A /* Build configuration list for PBXProject "AlternativeSwift" */;
+			buildConfigurationList = 4C0CA2EA1EDAEFBD000B2F9A /* Build configuration list for PBXProject "CanvasFileExplorer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -111,7 +111,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4C0CA2EE1EDAEFBD000B2F9A /* AlternativeSwift */,
+				4C0CA2EE1EDAEFBD000B2F9A /* CanvasFileExplorer */,
 			);
 		};
 /* End PBXProject section */
@@ -261,9 +261,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = AlternativeSwift/Info.plist;
+				INFOPLIST_FILE = CanvasFileExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.AlternativeSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.canvasfileexplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -274,9 +274,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = AlternativeSwift/Info.plist;
+				INFOPLIST_FILE = CanvasFileExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.AlternativeSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.canvasfileexplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -285,7 +285,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C0CA2EA1EDAEFBD000B2F9A /* Build configuration list for PBXProject "AlternativeSwift" */ = {
+		4C0CA2EA1EDAEFBD000B2F9A /* Build configuration list for PBXProject "CanvasFileExplorer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C0CA2FC1EDAEFBD000B2F9A /* Debug */,
@@ -294,7 +294,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C0CA2FE1EDAEFBD000B2F9A /* Build configuration list for PBXNativeTarget "AlternativeSwift" */ = {
+		4C0CA2FE1EDAEFBD000B2F9A /* Build configuration list for PBXNativeTarget "CanvasFileExplorer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C0CA2FF1EDAEFBD000B2F9A /* Debug */,
