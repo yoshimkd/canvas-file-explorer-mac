@@ -103,6 +103,18 @@ class ViewController: NSViewController {
                           encoding: .utf8)
     }
     
+    func fileView1() -> FileView1 {
+        var topLevelObjects: NSArray? = NSArray()
+        Bundle(for: Wireframe.self).loadNibNamed(
+            NSNib.Name("FileView"),
+            owner: nil,
+            topLevelObjects: &topLevelObjects)
+        return topLevelObjects!.first {
+            view in
+            view is FileView1
+            } as! FileView1
+    }
+    
     func drawFilesFromRoot(directory: String) {
         let allSwiftFilePaths = swiftFilePaths(
             inDirectoryWithFilePath: directory)
@@ -114,7 +126,8 @@ class ViewController: NSViewController {
                 let fileName = (((filePath as NSString)
                     .lastPathComponent as NSString).deletingPathExtension)
                 
-                let fileView = NSTextField(labelWithString: fileName)
+                let fileView = self.fileView1()
+                fileView.label.stringValue = fileName
                 
                 if let savedFilePosition =
                     savedFilesPositions.first(where: {
@@ -126,7 +139,8 @@ class ViewController: NSViewController {
                     fileView.frame.origin = CGPoint(x: 50, y: 50)
                 }
                 
-                fileView.drawsBackground = true
+                fileView.wantsLayer = true
+                fileView.layer?.cornerRadius = 5
                 
                 let panRecognizer = NSPanGestureRecognizer(
                     target: self,

@@ -16,6 +16,8 @@
 		4CDD09221F819A400011B05E /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDD09211F819A400011B05E /* ViewController.xib */; };
 		4CDD09241F819A830011B05E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD09231F819A830011B05E /* ViewController.swift */; };
 		4CDD09261F819C1C0011B05E /* ViewControllerUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD09251F819C1C0011B05E /* ViewControllerUtilities.swift */; };
+		4CF3CED21F823DBD0015758F /* FileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF3CED11F823DBD0015758F /* FileView.xib */; };
+		4CF3CED41F823E8B0015758F /* FileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3CED31F823E8B0015758F /* FileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		4CDD09211F819A400011B05E /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		4CDD09231F819A830011B05E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4CDD09251F819C1C0011B05E /* ViewControllerUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUtilities.swift; sourceTree = "<group>"; };
+		4CF3CED11F823DBD0015758F /* FileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileView.xib; sourceTree = "<group>"; };
+		4CF3CED31F823E8B0015758F /* FileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 				4CDD09231F819A830011B05E /* ViewController.swift */,
 				4CDD09251F819C1C0011B05E /* ViewControllerUtilities.swift */,
 				4CDD09211F819A400011B05E /* ViewController.xib */,
+				4CF3CED31F823E8B0015758F /* FileView.swift */,
+				4CF3CED11F823DBD0015758F /* FileView.xib */,
 				4CDD09151F8199CE0011B05E /* Info.plist */,
 			);
 			path = CanvasScreen;
@@ -220,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CF3CED21F823DBD0015758F /* FileView.xib in Resources */,
 				4CDD09221F819A400011B05E /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CF3CED41F823E8B0015758F /* FileView.swift in Sources */,
 				4CDD09261F819C1C0011B05E /* ViewControllerUtilities.swift in Sources */,
 				4CDD09241F819A830011B05E /* ViewController.swift in Sources */,
 				4CDD09201F8199FE0011B05E /* Wireframe.swift in Sources */,
