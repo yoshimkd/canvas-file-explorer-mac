@@ -8,22 +8,64 @@
 
 /* Begin PBXBuildFile section */
 		4C0CA2F31EDAEFBD000B2F9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0CA2F21EDAEFBD000B2F9A /* AppDelegate.swift */; };
-		4C0CA2F51EDAEFBD000B2F9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0CA2F41EDAEFBD000B2F9A /* ViewController.swift */; };
 		4C0CA2F71EDAEFBD000B2F9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0CA2F61EDAEFBD000B2F9A /* Assets.xcassets */; };
-		4C0CA2FA1EDAEFBD000B2F9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0CA2F81EDAEFBD000B2F9A /* Main.storyboard */; };
+		4C51F94C1F81B9EA009096ED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51F94B1F81B9EA009096ED /* main.swift */; };
+		4CDD09191F8199CE0011B05E /* CanvasScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDD09121F8199CE0011B05E /* CanvasScreen.framework */; };
+		4CDD091A1F8199CE0011B05E /* CanvasScreen.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDD09121F8199CE0011B05E /* CanvasScreen.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4CDD09201F8199FE0011B05E /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD091F1F8199FE0011B05E /* Wireframe.swift */; };
+		4CDD09221F819A400011B05E /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDD09211F819A400011B05E /* ViewController.xib */; };
+		4CDD09241F819A830011B05E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD09231F819A830011B05E /* ViewController.swift */; };
+		4CDD09261F819C1C0011B05E /* ViewControllerUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD09251F819C1C0011B05E /* ViewControllerUtilities.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CDD09171F8199CE0011B05E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C0CA2E71EDAEFBD000B2F9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CDD09111F8199CE0011B05E;
+			remoteInfo = CanvasScreen;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4CDD091E1F8199CE0011B05E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4CDD091A1F8199CE0011B05E /* CanvasScreen.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4C0CA2EF1EDAEFBD000B2F9A /* CanvasFileExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanvasFileExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0CA2F21EDAEFBD000B2F9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C0CA2F41EDAEFBD000B2F9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4C0CA2F61EDAEFBD000B2F9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4C0CA2F91EDAEFBD000B2F9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C0CA2FB1EDAEFBD000B2F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C51F94B1F81B9EA009096ED /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		4CDD09121F8199CE0011B05E /* CanvasScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CanvasScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CDD09151F8199CE0011B05E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CDD091F1F8199FE0011B05E /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		4CDD09211F819A400011B05E /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		4CDD09231F819A830011B05E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CDD09251F819C1C0011B05E /* ViewControllerUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4C0CA2EC1EDAEFBD000B2F9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CDD09191F8199CE0011B05E /* CanvasScreen.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CDD090E1F8199CE0011B05E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				4C0CA2F11EDAEFBD000B2F9A /* CanvasFileExplorer */,
+				4CDD09131F8199CE0011B05E /* CanvasScreen */,
 				4C0CA2F01EDAEFBD000B2F9A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				4C0CA2EF1EDAEFBD000B2F9A /* CanvasFileExplorer.app */,
+				4CDD09121F8199CE0011B05E /* CanvasScreen.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,16 +96,37 @@
 		4C0CA2F11EDAEFBD000B2F9A /* CanvasFileExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				4C51F94B1F81B9EA009096ED /* main.swift */,
 				4C0CA2F21EDAEFBD000B2F9A /* AppDelegate.swift */,
-				4C0CA2F41EDAEFBD000B2F9A /* ViewController.swift */,
 				4C0CA2F61EDAEFBD000B2F9A /* Assets.xcassets */,
-				4C0CA2F81EDAEFBD000B2F9A /* Main.storyboard */,
 				4C0CA2FB1EDAEFBD000B2F9A /* Info.plist */,
 			);
 			path = CanvasFileExplorer;
 			sourceTree = "<group>";
 		};
+		4CDD09131F8199CE0011B05E /* CanvasScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4CDD091F1F8199FE0011B05E /* Wireframe.swift */,
+				4CDD09231F819A830011B05E /* ViewController.swift */,
+				4CDD09251F819C1C0011B05E /* ViewControllerUtilities.swift */,
+				4CDD09211F819A400011B05E /* ViewController.xib */,
+				4CDD09151F8199CE0011B05E /* Info.plist */,
+			);
+			path = CanvasScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4CDD090F1F8199CE0011B05E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		4C0CA2EE1EDAEFBD000B2F9A /* CanvasFileExplorer */ = {
@@ -71,15 +136,35 @@
 				4C0CA2EB1EDAEFBD000B2F9A /* Sources */,
 				4C0CA2EC1EDAEFBD000B2F9A /* Frameworks */,
 				4C0CA2ED1EDAEFBD000B2F9A /* Resources */,
+				4CDD091E1F8199CE0011B05E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4CDD09181F8199CE0011B05E /* PBXTargetDependency */,
 			);
 			name = CanvasFileExplorer;
 			productName = AlternativeSwift;
 			productReference = 4C0CA2EF1EDAEFBD000B2F9A /* CanvasFileExplorer.app */;
 			productType = "com.apple.product-type.application";
+		};
+		4CDD09111F8199CE0011B05E /* CanvasScreen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CDD091D1F8199CE0011B05E /* Build configuration list for PBXNativeTarget "CanvasScreen" */;
+			buildPhases = (
+				4CDD090D1F8199CE0011B05E /* Sources */,
+				4CDD090E1F8199CE0011B05E /* Frameworks */,
+				4CDD090F1F8199CE0011B05E /* Headers */,
+				4CDD09101F8199CE0011B05E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CanvasScreen;
+			productName = CanvasScreen;
+			productReference = 4CDD09121F8199CE0011B05E /* CanvasScreen.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -94,7 +179,12 @@
 					4C0CA2EE1EDAEFBD000B2F9A = {
 						CreatedOnToolsVersion = 8.3.2;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+					};
+					4CDD09111F8199CE0011B05E = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -112,6 +202,7 @@
 			projectRoot = "";
 			targets = (
 				4C0CA2EE1EDAEFBD000B2F9A /* CanvasFileExplorer */,
+				4CDD09111F8199CE0011B05E /* CanvasScreen */,
 			);
 		};
 /* End PBXProject section */
@@ -122,7 +213,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C0CA2F71EDAEFBD000B2F9A /* Assets.xcassets in Resources */,
-				4C0CA2FA1EDAEFBD000B2F9A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CDD09101F8199CE0011B05E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CDD09221F819A400011B05E /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,23 +231,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C0CA2F51EDAEFBD000B2F9A /* ViewController.swift in Sources */,
 				4C0CA2F31EDAEFBD000B2F9A /* AppDelegate.swift in Sources */,
+				4C51F94C1F81B9EA009096ED /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CDD090D1F8199CE0011B05E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CDD09261F819C1C0011B05E /* ViewControllerUtilities.swift in Sources */,
+				4CDD09241F819A830011B05E /* ViewController.swift in Sources */,
+				4CDD09201F8199FE0011B05E /* Wireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		4C0CA2F81EDAEFBD000B2F9A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C0CA2F91EDAEFBD000B2F9A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		4CDD09181F8199CE0011B05E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CDD09111F8199CE0011B05E /* CanvasScreen */;
+			targetProxy = 4CDD09171F8199CE0011B05E /* PBXContainerItemProxy */;
 		};
-/* End PBXVariantGroup section */
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4C0CA2FC1EDAEFBD000B2F9A /* Debug */ = {
@@ -259,12 +364,16 @@
 		4C0CA2FF1EDAEFBD000B2F9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CanvasFileExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.canvasfileexplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -272,13 +381,80 @@
 		4C0CA3001EDAEFBD000B2F9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CanvasFileExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.canvasfileexplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		4CDD091B1F8199CE0011B05E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CanvasScreen/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.CanvasScreen;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4CDD091C1F8199CE0011B05E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CanvasScreen/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.CanvasScreen;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -299,6 +475,15 @@
 			buildConfigurations = (
 				4C0CA2FF1EDAEFBD000B2F9A /* Debug */,
 				4C0CA3001EDAEFBD000B2F9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CDD091D1F8199CE0011B05E /* Build configuration list for PBXNativeTarget "CanvasScreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CDD091B1F8199CE0011B05E /* Debug */,
+				4CDD091C1F8199CE0011B05E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

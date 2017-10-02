@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ViewController" customModule="CanvasScreen" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="PQb-0T-1Ed" id="y0O-Uc-gA5"/>
+                <outlet property="view" destination="c22-O7-iKe" id="Ot2-pL-Dwb"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="PQb-0T-1Ed" userLabel="Container view">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                </customView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NKe-Ha-0J1" userLabel="Save button">
+                    <rect key="frame" x="405" y="-7" width="81" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="69" id="218-X2-avd"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Aia-wP-n2q">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="saveButtonPushHandler:" target="-2" id="4Jt-jS-9uB"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="NKe-Ha-0J1" secondAttribute="bottom" id="4ny-ZH-8b7"/>
+                <constraint firstAttribute="bottom" secondItem="PQb-0T-1Ed" secondAttribute="bottom" id="CMW-Vu-dJE"/>
+                <constraint firstAttribute="trailing" secondItem="PQb-0T-1Ed" secondAttribute="trailing" id="HGy-zD-ZsS"/>
+                <constraint firstAttribute="trailing" secondItem="NKe-Ha-0J1" secondAttribute="trailing" id="WrU-Br-jgC"/>
+                <constraint firstItem="PQb-0T-1Ed" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="YGA-pb-Jti"/>
+                <constraint firstItem="PQb-0T-1Ed" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="aKN-fj-nKX"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>

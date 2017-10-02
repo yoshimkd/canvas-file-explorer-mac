@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  CanvasFileExplorer
+//  CanvasScreen
 //
-//  Created by Jovan Jovanovski on 5/28/17.
+//  Created by Jovan Jovanovski on 10/1/17.
 //  Copyright © 2017 Jovan. All rights reserved.
 //
 

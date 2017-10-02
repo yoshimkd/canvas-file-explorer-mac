@@ -8,19 +8,22 @@
 
 import Cocoa
 
-@NSApplicationMain
+import CanvasScreen
+
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-
-
+    
+    let wireframe: CanvasScreen.Wireframe = CanvasScreen.Wireframe()
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        let controller = wireframe.viewController
+        let window = NSWindow(
+            contentRect: NSRect(x: 100, y: 100, width: 400, height: 400),
+            styleMask: [.closable, .resizable, .titled, .fullSizeContentView],
+            backing: .buffered,
+            defer: true)
+        
+        window.contentViewController = controller
+        window.makeKeyAndOrderFront(nil)
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-
-
+    
 }
-
