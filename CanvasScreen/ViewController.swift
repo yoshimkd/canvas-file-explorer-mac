@@ -162,21 +162,22 @@ class ViewController: NSViewController {
     
     @objc func handlePan(sender: NSPanGestureRecognizer) {
         if sender.state == .changed || sender.state == .ended {
-            let trans = sender.translation(in: sender.view!.superview!)
+            let translation = sender.translation(in: sender.view!.superview!)
             
             if sender.view! === containerView {
                 fileViews.forEach({
                     fileView in
                     fileView.view!.frame.origin = CGPoint(
-                        x: fileView.view!.frame.origin.x + trans.x / 10,
-                        y: fileView.view!.frame.origin.y + trans.y / 10)
+                        x: fileView.view!.frame.origin.x + translation.x * 2,
+                        y: fileView.view!.frame.origin.y + translation.y * 2)
                 })
             } else {
                 sender.view!.frame.origin = CGPoint(
-                    x: sender.view!.frame.origin.x + trans.x,
-                    y: sender.view!.frame.origin.y + trans.y)
-                sender.setTranslation(.zero, in: sender.view!.superview!)
+                    x: sender.view!.frame.origin.x + translation.x,
+                    y: sender.view!.frame.origin.y + translation.y)
             }
+            
+            sender.setTranslation(.zero, in: sender.view!.superview!)
         }
     }
     
