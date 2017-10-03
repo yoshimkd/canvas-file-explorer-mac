@@ -12,11 +12,12 @@ import CanvasScreen
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    var window: NSWindow!
     let wireframe: CanvasScreen.Wireframe = CanvasScreen.Wireframe()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let controller = wireframe.viewController
-        let window = NSWindow(
+        window = NSWindow(
             contentRect: NSRect(x: 100, y: 100, width: 400, height: 400),
             styleMask: [.closable, .resizable, .titled, .fullSizeContentView],
             backing: .buffered,
