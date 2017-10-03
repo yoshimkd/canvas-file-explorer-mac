@@ -8,6 +8,17 @@
 
 import Cocoa
 
+enum Direction : Int {
+    case west = 0
+    case southWest = 1
+    case south = 2
+    case southEast = 3
+    case east = 4
+    case northEast = 5
+    case north = 6
+    case northWest = 7
+}
+
 class FileView {
     
     let filePath: String
@@ -123,7 +134,8 @@ class ViewController: NSViewController {
             inDirectoryWithFilePath: directory)
         
         print("Recognized swift files' paths: \(allSwiftFilePaths)")
-        
+        var direction: Direction = .west
+        var counter = 0
         fileViews =
             allSwiftFilePaths.map {
                 filePath in
@@ -141,8 +153,16 @@ class ViewController: NSViewController {
                     }) {
                     fileView.frame.origin = savedFilePosition.point
                 } else {
-                    fileView.frame.origin = CGPoint(x: 50, y: 50)
+                    
+                    fileView.frame.origin = self.point(forDirection: direction, counter: counter)
                 }
+                counter += 1
+                var nextDirection = direction.rawValue + 1
+                if nextDirection > 7 {
+                    counter += 1
+                    nextDirection = 0
+                }
+                direction = Direction(rawValue: nextDirection)!
                 
                 let panRecognizer = NSPanGestureRecognizer(
                     target: self,
@@ -157,6 +177,35 @@ class ViewController: NSViewController {
                 containerView.addSubview(fileView)
                 
                 return FileView(filePath: filePath, view: fileView)
+        }
+    }
+    
+    func point(forDirection direction: Direction, counter: Int) -> CGPoint {
+        let padding = counter > 2 ? 10 : 100
+        let paddingReferent = 20
+        let size = 50
+        let negativeValue = -counter * padding - size
+        let positiveValue = counter * padding + size
+        let positiveReferent = counter * paddingReferent + size
+        let negativeReferent = -counter * paddingReferent - size
+        let referent = counter % 2 == 0 ? 20 : -20
+        switch direction {
+        case .west:
+            return CGPoint(x: negativeReferent, y: referent)
+        case .southWest:
+            return CGPoint(x: negativeValue, y: positiveValue)
+        case .south:
+            return CGPoint(x: referent, y: positiveValue)
+        case .southEast:
+            return CGPoint(x: positiveValue, y: positiveValue)
+        case .east:
+            return CGPoint(x: positiveReferent, y: referent)
+        case .northEast:
+            return CGPoint(x: positiveValue, y: negativeValue)
+        case .north:
+            return CGPoint(x: referent, y: negativeValue)
+        case .northWest:
+            return CGPoint(x: negativeValue, y: negativeValue)
         }
     }
     
