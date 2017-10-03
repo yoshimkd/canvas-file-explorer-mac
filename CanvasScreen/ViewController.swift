@@ -45,6 +45,8 @@ class ViewController: NSViewController {
         filePathsPositionsFileURL = documentsDirectoryUrl
             .appendingPathComponent("filePathsPositions.json")
         
+        print("File paths positions file URL: \(filePathsPositionsFileURL)")
+        
         savedFilesPositions = jsonFromFile()
         
         let openPanel = NSOpenPanel()
@@ -52,8 +54,9 @@ class ViewController: NSViewController {
         openPanel.canChooseDirectories = true
         
         openPanel.begin {
-            [unowned self] result in
+            [unowned self, openPanel = openPanel] result in
             if result.rawValue == NSFileHandlingPanelOKButton {
+                print("Chosen root directory: \(openPanel.url!.path)")
                 self.drawFilesFromRoot(directory: openPanel.url!.path)
             }
         }
@@ -118,6 +121,8 @@ class ViewController: NSViewController {
     func drawFilesFromRoot(directory: String) {
         let allSwiftFilePaths = swiftFilePaths(
             inDirectoryWithFilePath: directory)
+        
+        print("Recognized swift files' paths: \(allSwiftFilePaths)")
         
         fileViews =
             allSwiftFilePaths.map {
