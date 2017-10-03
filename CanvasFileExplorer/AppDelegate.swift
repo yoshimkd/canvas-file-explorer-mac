@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let controller = wireframe.viewController
         window = NSWindow(
-            contentRect: NSRect(x: 100, y: 100, width: 500, height: 500),
+            contentRect: NSRect(x: 100, y: 100, width: 600, height: 600),
             styleMask: [.closable, .resizable, .titled, .fullSizeContentView],
             backing: .buffered,
             defer: true)
