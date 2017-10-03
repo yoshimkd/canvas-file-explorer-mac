@@ -139,9 +139,6 @@ class ViewController: NSViewController {
                     fileView.frame.origin = CGPoint(x: 50, y: 50)
                 }
                 
-                fileView.wantsLayer = true
-                fileView.layer?.cornerRadius = 5
-                
                 let panRecognizer = NSPanGestureRecognizer(
                     target: self,
                     action: #selector(ViewController.handlePan(sender:)))

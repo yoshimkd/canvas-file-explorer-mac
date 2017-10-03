@@ -10,38 +10,37 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe" customClass="FileView1" customModule="CanvasScreen" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="121" height="33"/>
+            <rect key="frame" x="0.0" y="0.0" width="121" height="34"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <customView translatesAutoresizingMaskIntoConstraints="NO" id="ZMm-yW-j7h">
-                    <rect key="frame" x="41" y="9" width="39" height="16"/>
-                    <subviews>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gi3-dd-wUr">
-                            <rect key="frame" x="0.0" y="0.0" width="39" height="16"/>
-                            <textFieldCell key="cell" lineBreakMode="charWrapping" sendsActionOnEndEditing="YES" alignment="center" title="Label" drawsBackground="YES" id="Tut-Qy-Nod">
-                                <font key="font" metaFont="system" size="12"/>
-                                <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
-                    </subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gi3-dd-wUr">
+                    <rect key="frame" x="0.0" y="0.0" width="121" height="34"/>
                     <constraints>
-                        <constraint firstItem="gi3-dd-wUr" firstAttribute="top" secondItem="ZMm-yW-j7h" secondAttribute="top" id="6Ff-AY-VSX"/>
-                        <constraint firstAttribute="trailing" secondItem="gi3-dd-wUr" secondAttribute="trailing" id="SqR-eW-1iI"/>
-                        <constraint firstAttribute="bottom" secondItem="gi3-dd-wUr" secondAttribute="bottom" id="iYw-9d-ope"/>
-                        <constraint firstItem="gi3-dd-wUr" firstAttribute="leading" secondItem="ZMm-yW-j7h" secondAttribute="leading" id="tC1-wo-yNZ"/>
+                        <constraint firstAttribute="height" constant="34" id="oBv-Qr-BAQ"/>
                     </constraints>
-                </customView>
+                    <textFieldCell key="cell" lineBreakMode="charWrapping" sendsActionOnEndEditing="YES" alignment="center" title="File name" drawsBackground="YES" id="Tut-Qy-Nod">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
-                <constraint firstItem="ZMm-yW-j7h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="leading" id="3HB-7c-fVc"/>
-                <constraint firstItem="ZMm-yW-j7h" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="J0A-wj-OZq"/>
-                <constraint firstItem="ZMm-yW-j7h" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="bVc-y3-s3W"/>
+                <constraint firstItem="gi3-dd-wUr" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="LHr-tg-QrH"/>
+                <constraint firstAttribute="trailing" secondItem="gi3-dd-wUr" secondAttribute="trailing" id="YRH-9i-g26"/>
+                <constraint firstItem="gi3-dd-wUr" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="g3x-vM-GAA"/>
+                <constraint firstAttribute="bottom" secondItem="gi3-dd-wUr" secondAttribute="bottom" id="zWE-V6-G7T"/>
             </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="label" destination="gi3-dd-wUr" id="Ox3-Hx-zbm"/>
             </connections>
-            <point key="canvasLocation" x="138.5" y="167.5"/>
+            <point key="canvasLocation" x="138.5" y="167"/>
         </customView>
     </objects>
 </document>
