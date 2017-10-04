@@ -10,12 +10,21 @@ import Cocoa
 
 public class Wireframe {
     
+    private let filesInitialPositionsSaver: ([FileInitialPosition]) -> ()
     public let viewController: NSViewController
     
-    public init(filesInitialPositions: [FileInitialPosition]) {
+    public init(
+        filesInitialPositions: [FileInitialPosition],
+        filesInitialPositionsSaver: @escaping ([FileInitialPosition]) -> ()) {
         let viewController = ViewController.createFromNib()
         viewController.filesInitialPositions = filesInitialPositions
+        
+        
         self.viewController = viewController
+        
+        self.filesInitialPositionsSaver = filesInitialPositionsSaver
+        viewController.filesInitialPositionsSaver = filesInitialPositionsSaver
+        
     }
     
 }

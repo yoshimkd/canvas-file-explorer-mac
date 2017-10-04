@@ -36,6 +36,7 @@ final class ViewController: NSViewController {
     @IBOutlet private weak var containerView: NSView!
     
     var filesInitialPositions: [FileInitialPosition]!
+    var filesInitialPositionsSaver: (([FileInitialPosition]) -> ())!
     
     var fileViews = [FileView]()
     
@@ -55,24 +56,6 @@ final class ViewController: NSViewController {
             target: self,
             action: #selector(ViewController.handlePan(sender:)))
         containerView.addGestureRecognizer(panRecognizer)
-    }
-    
-    func dictionaryToJSONString(dictionary: [[String: Any]]) -> String {
-        let theJSONData =
-            try! JSONSerialization.data(withJSONObject: dictionary)
-        return String(data: theJSONData,
-                      encoding: .ascii)!
-    }
-    
-    func writeToFile(string: String) {
-        let documentsDirectoryURL = FileManager.default.urls(
-            for: .documentDirectory, in: .userDomainMask)[0]
-        let filePathsPositionsFileURL = documentsDirectoryURL
-            .appendingPathComponent("filePathsPositions.json")
-        
-        try! string.write(to: filePathsPositionsFileURL,
-                          atomically: true,
-                          encoding: .utf8)
     }
     
     func fileView1() -> FileView1 {
@@ -192,15 +175,14 @@ final class ViewController: NSViewController {
     }
     
     @IBAction func saveButtonPushHandler(_ sender: NSButton) {
-        let json =
-            fileViews.map {
-                fileView -> [String : Any] in
-                let origin = fileView.view!.frame.origin
-                return ["filePath": fileView.filePath,
-                        "position": ["x": origin.x, "y": origin.y]]
+        let filesInitialPositions = fileViews.map {
+            fileView in
+            return FileInitialPosition(
+                filePath: fileView.filePath,
+                point: fileView.view!.frame.origin)
         }
         
-        writeToFile(string: dictionaryToJSONString(dictionary: json))
+        filesInitialPositionsSaver(filesInitialPositions)
     }
     
     override func magnify(with event: NSEvent) {

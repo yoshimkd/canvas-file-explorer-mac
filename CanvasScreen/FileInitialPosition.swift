@@ -10,8 +10,8 @@ import CoreGraphics
 
 public struct FileInitialPosition {
     
-    let filePath: String
-    let point: CGPoint?
+    public let filePath: String
+    public let point: CGPoint?
     
     public init(filePath: String,
                 point: CGPoint?) {

@@ -13,4 +13,10 @@ public struct FileInitialPosition {
     public let filePath: String
     public let point: CGPoint
     
+    public init(filePath: String,
+                point: CGPoint) {
+        self.filePath = filePath
+        self.point = point
+    }
+    
 }

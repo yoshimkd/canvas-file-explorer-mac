@@ -19,9 +19,9 @@
 		4C7700301F850C7F005F3E47 /* FileSystemHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7700291F850C7F005F3E47 /* FileSystemHelper.framework */; };
 		4C7700311F850C7F005F3E47 /* FileSystemHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7700291F850C7F005F3E47 /* FileSystemHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C7700361F850C9E005F3E47 /* FileSystemHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7700351F850C9E005F3E47 /* FileSystemHelper.swift */; };
-		4CB9D3FD1F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB9D3F61F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework */; };
-		4CB9D3FE1F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB9D3F61F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4CB9D4031F8522FA00D0225A /* SavedFilesInitialPositionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9D4021F8522FA00D0225A /* SavedFilesInitialPositionsProvider.swift */; };
+		4CB9D3FD1F8522E200D0225A /* FilesInitialPositionsCacheModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB9D3F61F8522E200D0225A /* FilesInitialPositionsCacheModule.framework */; };
+		4CB9D3FE1F8522E200D0225A /* FilesInitialPositionsCacheModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB9D3F61F8522E200D0225A /* FilesInitialPositionsCacheModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4CB9D4031F8522FA00D0225A /* FilesInitialPositionsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9D4021F8522FA00D0225A /* FilesInitialPositionsCache.swift */; };
 		4CB9D4051F85239000D0225A /* FileInitialPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9D4041F85239000D0225A /* FileInitialPosition.swift */; };
 		4CDD09191F8199CE0011B05E /* CanvasScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDD09121F8199CE0011B05E /* CanvasScreen.framework */; };
 		4CDD091A1F8199CE0011B05E /* CanvasScreen.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDD09121F8199CE0011B05E /* CanvasScreen.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -74,7 +74,7 @@
 				4C7700181F84DABE005F3E47 /* FileSystemItemsChooserScreen.framework in Embed Frameworks */,
 				4CDD091A1F8199CE0011B05E /* CanvasScreen.framework in Embed Frameworks */,
 				4C7700311F850C7F005F3E47 /* FileSystemHelper.framework in Embed Frameworks */,
-				4CB9D3FE1F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework in Embed Frameworks */,
+				4CB9D3FE1F8522E200D0225A /* FilesInitialPositionsCacheModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,9 +96,9 @@
 		4C7700291F850C7F005F3E47 /* FileSystemHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FileSystemHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C77002C1F850C7F005F3E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C7700351F850C9E005F3E47 /* FileSystemHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemHelper.swift; sourceTree = "<group>"; };
-		4CB9D3F61F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SavedFilesInitialPositionsProviderModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CB9D3F61F8522E200D0225A /* FilesInitialPositionsCacheModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FilesInitialPositionsCacheModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB9D3F91F8522E200D0225A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CB9D4021F8522FA00D0225A /* SavedFilesInitialPositionsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFilesInitialPositionsProvider.swift; sourceTree = "<group>"; };
+		4CB9D4021F8522FA00D0225A /* FilesInitialPositionsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesInitialPositionsCache.swift; sourceTree = "<group>"; };
 		4CB9D4041F85239000D0225A /* FileInitialPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileInitialPosition.swift; sourceTree = "<group>"; };
 		4CDD09121F8199CE0011B05E /* CanvasScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CanvasScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CDD09151F8199CE0011B05E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				4C7700171F84DABE005F3E47 /* FileSystemItemsChooserScreen.framework in Frameworks */,
 				4CDD09191F8199CE0011B05E /* CanvasScreen.framework in Frameworks */,
 				4C7700301F850C7F005F3E47 /* FileSystemHelper.framework in Frameworks */,
-				4CB9D3FD1F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework in Frameworks */,
+				4CB9D3FD1F8522E200D0225A /* FilesInitialPositionsCacheModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +160,7 @@
 				4C7700111F84DABE005F3E47 /* FileSystemItemsChooserScreen */,
 				4CDD09131F8199CE0011B05E /* CanvasScreen */,
 				4C77002A1F850C7F005F3E47 /* FileSystemHelper */,
-				4CB9D3F71F8522E200D0225A /* SavedFilesInitialPositionsProviderModule */,
+				4CB9D3F71F8522E200D0225A /* FilesInitialPositionsCacheModule */,
 				4C0CA2F01EDAEFBD000B2F9A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 				4CDD09121F8199CE0011B05E /* CanvasScreen.framework */,
 				4C7700101F84DABE005F3E47 /* FileSystemItemsChooserScreen.framework */,
 				4C7700291F850C7F005F3E47 /* FileSystemHelper.framework */,
-				4CB9D3F61F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework */,
+				4CB9D3F61F8522E200D0225A /* FilesInitialPositionsCacheModule.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,14 +208,14 @@
 			path = FileSystemHelper;
 			sourceTree = "<group>";
 		};
-		4CB9D3F71F8522E200D0225A /* SavedFilesInitialPositionsProviderModule */ = {
+		4CB9D3F71F8522E200D0225A /* FilesInitialPositionsCacheModule */ = {
 			isa = PBXGroup;
 			children = (
-				4CB9D4021F8522FA00D0225A /* SavedFilesInitialPositionsProvider.swift */,
+				4CB9D4021F8522FA00D0225A /* FilesInitialPositionsCache.swift */,
 				4CB9D4041F85239000D0225A /* FileInitialPosition.swift */,
 				4CB9D3F91F8522E200D0225A /* Info.plist */,
 			);
-			path = SavedFilesInitialPositionsProviderModule;
+			path = FilesInitialPositionsCacheModule;
 			sourceTree = "<group>";
 		};
 		4CDD09131F8199CE0011B05E /* CanvasScreen */ = {
@@ -325,9 +325,9 @@
 			productReference = 4C7700291F850C7F005F3E47 /* FileSystemHelper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4CB9D3F51F8522E200D0225A /* SavedFilesInitialPositionsProviderModule */ = {
+		4CB9D3F51F8522E200D0225A /* FilesInitialPositionsCacheModule */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4CB9D4011F8522E200D0225A /* Build configuration list for PBXNativeTarget "SavedFilesInitialPositionsProviderModule" */;
+			buildConfigurationList = 4CB9D4011F8522E200D0225A /* Build configuration list for PBXNativeTarget "FilesInitialPositionsCacheModule" */;
 			buildPhases = (
 				4CB9D3F11F8522E200D0225A /* Sources */,
 				4CB9D3F21F8522E200D0225A /* Frameworks */,
@@ -338,9 +338,9 @@
 			);
 			dependencies = (
 			);
-			name = SavedFilesInitialPositionsProviderModule;
+			name = FilesInitialPositionsCacheModule;
 			productName = FilesInitialPositionsProvider;
-			productReference = 4CB9D3F61F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework */;
+			productReference = 4CB9D3F61F8522E200D0225A /* FilesInitialPositionsCacheModule.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4CDD09111F8199CE0011B05E /* CanvasScreen */ = {
@@ -415,7 +415,7 @@
 				4C77000F1F84DABE005F3E47 /* FileSystemItemsChooserScreen */,
 				4CDD09111F8199CE0011B05E /* CanvasScreen */,
 				4C7700281F850C7F005F3E47 /* FileSystemHelper */,
-				4CB9D3F51F8522E200D0225A /* SavedFilesInitialPositionsProviderModule */,
+				4CB9D3F51F8522E200D0225A /* FilesInitialPositionsCacheModule */,
 			);
 		};
 /* End PBXProject section */
@@ -493,7 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CB9D4031F8522FA00D0225A /* SavedFilesInitialPositionsProvider.swift in Sources */,
+				4CB9D4031F8522FA00D0225A /* FilesInitialPositionsCache.swift in Sources */,
 				4CB9D4051F85239000D0225A /* FileInitialPosition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,7 +525,7 @@
 		};
 		4CB9D3FC1F8522E200D0225A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4CB9D3F51F8522E200D0225A /* SavedFilesInitialPositionsProviderModule */;
+			target = 4CB9D3F51F8522E200D0225A /* FilesInitialPositionsCacheModule */;
 			targetProxy = 4CB9D3FB1F8522E200D0225A /* PBXContainerItemProxy */;
 		};
 		4CDD09181F8199CE0011B05E /* PBXTargetDependency */ = {
@@ -817,7 +817,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "$(SRCROOT)/SavedFilesInitialPositionsProviderModule/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FilesInitialPositionsCacheModule/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -849,7 +849,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "$(SRCROOT)/SavedFilesInitialPositionsProviderModule/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FilesInitialPositionsCacheModule/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -965,7 +965,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4CB9D4011F8522E200D0225A /* Build configuration list for PBXNativeTarget "SavedFilesInitialPositionsProviderModule" */ = {
+		4CB9D4011F8522E200D0225A /* Build configuration list for PBXNativeTarget "FilesInitialPositionsCacheModule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4CB9D3FF1F8522E200D0225A /* Debug */,

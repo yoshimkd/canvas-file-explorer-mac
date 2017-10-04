@@ -9,7 +9,7 @@
 import Foundation
 
 import FileSystemItemsChooserScreen
-import SavedFilesInitialPositionsProviderModule
+import FilesInitialPositionsCacheModule
 import FileSystemHelper
 import CanvasScreen
 
@@ -22,15 +22,14 @@ final class ModulesManager {
     FileSystemItemsChooserScreen.Wireframe?
     var canvasScreenWireframe: CanvasScreen.Wireframe?
     
-    //    var files: [URL]!
     var savedFilesInitialPositions:
-    [SavedFilesInitialPositionsProviderModule.FileInitialPosition]!
+    [FilesInitialPositionsCacheModule.FileInitialPosition]!
     var chosenFilesInitialPositions:
     [CanvasScreen.FileInitialPosition]!
     
     func getFilesInitialPositions() {
         savedFilesInitialPositions =
-            SavedFilesInitialPositionsProvider.savedFilesInitialPositions()
+            FilesInitialPositionsCache.savedFilesInitialPositions()
     }
     
     func createFileSystemItemsChooserScreenWireframe(
@@ -67,7 +66,18 @@ final class ModulesManager {
     
     func createCanvasScreenWireframe() {
         canvasScreenWireframe = CanvasScreen.Wireframe(
-            filesInitialPositions: chosenFilesInitialPositions)
+            filesInitialPositions: chosenFilesInitialPositions,
+            filesInitialPositionsSaver: {
+                filesInitialPositions in
+                FilesInitialPositionsCache.save(
+                    filesInitialPositions: filesInitialPositions.map {
+                        fileInitialPosition in
+                        return FilesInitialPositionsCacheModule
+                            .FileInitialPosition(
+                                filePath: fileInitialPosition.filePath,
+                                point: fileInitialPosition.point!)
+                })
+        })
     }
     
 }
