@@ -31,46 +31,16 @@ class FileView {
     }
     
 }
-
-struct SavedFilePosition {
-    
-    let filePath: String
-    let point: CGPoint
-    
-}
-
-class ViewController: NSViewController {
+final class ViewController: NSViewController {
     
     @IBOutlet private weak var containerView: NSView!
     
-    var filePathsPositionsFileURL: URL!
+    var filesInitialPositions: [FileInitialPosition]!
     
     var fileViews = [FileView]()
-    var savedFilesPositions: [SavedFilePosition]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let documentsDirectoryUrl = FileManager.default.urls(
-            for: .documentDirectory, in: .userDomainMask)[0]
-        filePathsPositionsFileURL = documentsDirectoryUrl
-            .appendingPathComponent("filePathsPositions.json")
-        
-        print("File paths positions file URL: \(filePathsPositionsFileURL)")
-        
-        savedFilesPositions = jsonFromFile()
-        
-        let openPanel = NSOpenPanel()
-        openPanel.canChooseFiles = false
-        openPanel.canChooseDirectories = true
-        
-        openPanel.begin {
-            [unowned self, openPanel = openPanel] result in
-            if result.rawValue == NSFileHandlingPanelOKButton {
-                print("Chosen root directory: \(openPanel.url!.path)")
-                self.drawFilesFromRoot(directory: openPanel.url!.path)
-            }
-        }
         
         containerView.wantsLayer = true
         containerView.layer?.backgroundColor =
@@ -79,29 +49,12 @@ class ViewController: NSViewController {
                     blue: 246.0 / 255,
                     alpha: 1)
         
+        drawFiles()
+        
         let panRecognizer = NSPanGestureRecognizer(
             target: self,
             action: #selector(ViewController.handlePan(sender:)))
         containerView.addGestureRecognizer(panRecognizer)
-    }
-    
-    func jsonFromFile() -> [SavedFilePosition] {
-        do {
-            let data = try Data(contentsOf: filePathsPositionsFileURL)
-            let json = try JSONSerialization.jsonObject(
-                with: data, options: .mutableContainers) as! [[String: Any]]
-            return json.map {
-                dictionary in
-                let filePath = dictionary["filePath"] as! String
-                let position = dictionary["position"] as! [String: CGFloat]
-                
-                return SavedFilePosition(filePath: filePath,
-                                         point: CGPoint(x: position["x"]!,
-                                                        y: position["y"]!))
-            }
-        } catch {
-            return []
-        }
     }
     
     func dictionaryToJSONString(dictionary: [[String: Any]]) -> String {
@@ -112,6 +65,11 @@ class ViewController: NSViewController {
     }
     
     func writeToFile(string: String) {
+        let documentsDirectoryURL = FileManager.default.urls(
+            for: .documentDirectory, in: .userDomainMask)[0]
+        let filePathsPositionsFileURL = documentsDirectoryURL
+            .appendingPathComponent("filePathsPositions.json")
+        
         try! string.write(to: filePathsPositionsFileURL,
                           atomically: true,
                           encoding: .utf8)
@@ -129,33 +87,24 @@ class ViewController: NSViewController {
             } as! FileView1
     }
     
-    func drawFilesFromRoot(directory: String) {
-        let allSwiftFilePaths = swiftFilePaths(
-            inDirectoryWithFilePath: directory)
-        
-        print("Recognized swift files' paths: \(allSwiftFilePaths)")
+    func drawFiles() {
         var direction: Direction = .west
         var counter = 0
         fileViews =
-            allSwiftFilePaths.map {
-                filePath in
-                
-                let fileName = (((filePath as NSString)
+            filesInitialPositions.map {
+                fileInitialPosition in
+                let fileName = (((fileInitialPosition.filePath as NSString)
                     .lastPathComponent as NSString).deletingPathExtension)
                 
                 let fileView = self.fileView1()
                 fileView.label.stringValue = fileName
                 
-                if let savedFilePosition =
-                    savedFilesPositions.first(where: {
-                        savedFilePosition in
-                        return filePath == savedFilePosition.filePath
-                    }) {
-                    fileView.frame.origin = savedFilePosition.point
+                if let initialPosition = fileInitialPosition.point {
+                    fileView.frame.origin = initialPosition
                 } else {
-                    
                     fileView.frame.origin = self.point(forDirection: direction, counter: counter)
                 }
+                
                 counter += 1
                 var nextDirection = direction.rawValue + 1
                 if nextDirection > 7 {
@@ -176,7 +125,8 @@ class ViewController: NSViewController {
                 
                 containerView.addSubview(fileView)
                 
-                return FileView(filePath: filePath, view: fileView)
+                return FileView(
+                    filePath: fileInitialPosition.filePath, view: fileView)
         }
     }
     
@@ -236,6 +186,8 @@ class ViewController: NSViewController {
                 fileView in
                 return fileView.view == sender.view
                 }!.filePath
+        
+        print(filePath)
         NSWorkspace.shared.openFile(filePath)
     }
     
@@ -254,20 +206,5 @@ class ViewController: NSViewController {
     override func magnify(with event: NSEvent) {
         containerView.scaleUnitSquare(to: CGSize(
             width: event.magnification + 1, height: event.magnification + 1))
-    }
-}
-
-func swiftFilePaths(
-    inDirectoryWithFilePath directoryFilePath: String) -> [String] {
-    let filesSubPaths = try!
-        FileManager.default.subpathsOfDirectory(atPath: directoryFilePath)
-    return
-        (filesSubPaths as [NSString]).filter {
-            fileSubPath in
-            return fileSubPath.pathExtension == "swift"
-            }.map {
-                fileSubPath in
-                return (directoryFilePath as NSString)
-                    .appendingPathComponent(fileSubPath as String)
     }
 }

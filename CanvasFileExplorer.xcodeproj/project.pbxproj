@@ -10,6 +10,19 @@
 		4C0CA2F31EDAEFBD000B2F9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0CA2F21EDAEFBD000B2F9A /* AppDelegate.swift */; };
 		4C0CA2F71EDAEFBD000B2F9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0CA2F61EDAEFBD000B2F9A /* Assets.xcassets */; };
 		4C51F94C1F81B9EA009096ED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51F94B1F81B9EA009096ED /* main.swift */; };
+		4C7700171F84DABE005F3E47 /* FileSystemItemsChooserScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7700101F84DABE005F3E47 /* FileSystemItemsChooserScreen.framework */; };
+		4C7700181F84DABE005F3E47 /* FileSystemItemsChooserScreen.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7700101F84DABE005F3E47 /* FileSystemItemsChooserScreen.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C77001D1F84DADA005F3E47 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C77001C1F84DADA005F3E47 /* Wireframe.swift */; };
+		4C77001F1F84FED4005F3E47 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C77001E1F84FED4005F3E47 /* NavigationManager.swift */; };
+		4C7700211F84FF74005F3E47 /* ModulesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7700201F84FF74005F3E47 /* ModulesManager.swift */; };
+		4C7700231F850C31005F3E47 /* FileInitialPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7700221F850C31005F3E47 /* FileInitialPosition.swift */; };
+		4C7700301F850C7F005F3E47 /* FileSystemHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7700291F850C7F005F3E47 /* FileSystemHelper.framework */; };
+		4C7700311F850C7F005F3E47 /* FileSystemHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7700291F850C7F005F3E47 /* FileSystemHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C7700361F850C9E005F3E47 /* FileSystemHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7700351F850C9E005F3E47 /* FileSystemHelper.swift */; };
+		4CB9D3FD1F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB9D3F61F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework */; };
+		4CB9D3FE1F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB9D3F61F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4CB9D4031F8522FA00D0225A /* SavedFilesInitialPositionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9D4021F8522FA00D0225A /* SavedFilesInitialPositionsProvider.swift */; };
+		4CB9D4051F85239000D0225A /* FileInitialPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9D4041F85239000D0225A /* FileInitialPosition.swift */; };
 		4CDD09191F8199CE0011B05E /* CanvasScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDD09121F8199CE0011B05E /* CanvasScreen.framework */; };
 		4CDD091A1F8199CE0011B05E /* CanvasScreen.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDD09121F8199CE0011B05E /* CanvasScreen.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4CDD09201F8199FE0011B05E /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD091F1F8199FE0011B05E /* Wireframe.swift */; };
@@ -21,6 +34,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4C7700151F84DABE005F3E47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C0CA2E71EDAEFBD000B2F9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C77000F1F84DABE005F3E47;
+			remoteInfo = FileSystemItemsChooserScreen;
+		};
+		4C77002E1F850C7F005F3E47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C0CA2E71EDAEFBD000B2F9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C7700281F850C7F005F3E47;
+			remoteInfo = FileSystemHelper;
+		};
+		4CB9D3FB1F8522E200D0225A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C0CA2E71EDAEFBD000B2F9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CB9D3F51F8522E200D0225A;
+			remoteInfo = FilesInitialPositionsProvider;
+		};
 		4CDD09171F8199CE0011B05E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4C0CA2E71EDAEFBD000B2F9A /* Project object */;
@@ -37,7 +71,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4C7700181F84DABE005F3E47 /* FileSystemItemsChooserScreen.framework in Embed Frameworks */,
 				4CDD091A1F8199CE0011B05E /* CanvasScreen.framework in Embed Frameworks */,
+				4C7700311F850C7F005F3E47 /* FileSystemHelper.framework in Embed Frameworks */,
+				4CB9D3FE1F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +87,19 @@
 		4C0CA2F61EDAEFBD000B2F9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C0CA2FB1EDAEFBD000B2F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C51F94B1F81B9EA009096ED /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		4C7700101F84DABE005F3E47 /* FileSystemItemsChooserScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FileSystemItemsChooserScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C7700131F84DABE005F3E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C77001C1F84DADA005F3E47 /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		4C77001E1F84FED4005F3E47 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		4C7700201F84FF74005F3E47 /* ModulesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesManager.swift; sourceTree = "<group>"; };
+		4C7700221F850C31005F3E47 /* FileInitialPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileInitialPosition.swift; sourceTree = "<group>"; };
+		4C7700291F850C7F005F3E47 /* FileSystemHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FileSystemHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C77002C1F850C7F005F3E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C7700351F850C9E005F3E47 /* FileSystemHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemHelper.swift; sourceTree = "<group>"; };
+		4CB9D3F61F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SavedFilesInitialPositionsProviderModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CB9D3F91F8522E200D0225A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CB9D4021F8522FA00D0225A /* SavedFilesInitialPositionsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFilesInitialPositionsProvider.swift; sourceTree = "<group>"; };
+		4CB9D4041F85239000D0225A /* FileInitialPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileInitialPosition.swift; sourceTree = "<group>"; };
 		4CDD09121F8199CE0011B05E /* CanvasScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CanvasScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CDD09151F8199CE0011B05E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CDD091F1F8199FE0011B05E /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
@@ -65,7 +115,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7700171F84DABE005F3E47 /* FileSystemItemsChooserScreen.framework in Frameworks */,
 				4CDD09191F8199CE0011B05E /* CanvasScreen.framework in Frameworks */,
+				4C7700301F850C7F005F3E47 /* FileSystemHelper.framework in Frameworks */,
+				4CB9D3FD1F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C77000C1F84DABE005F3E47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C7700251F850C7F005F3E47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CB9D3F21F8522E200D0225A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +157,10 @@
 			isa = PBXGroup;
 			children = (
 				4C0CA2F11EDAEFBD000B2F9A /* CanvasFileExplorer */,
+				4C7700111F84DABE005F3E47 /* FileSystemItemsChooserScreen */,
 				4CDD09131F8199CE0011B05E /* CanvasScreen */,
+				4C77002A1F850C7F005F3E47 /* FileSystemHelper */,
+				4CB9D3F71F8522E200D0225A /* SavedFilesInitialPositionsProviderModule */,
 				4C0CA2F01EDAEFBD000B2F9A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +170,9 @@
 			children = (
 				4C0CA2EF1EDAEFBD000B2F9A /* CanvasFileExplorer.app */,
 				4CDD09121F8199CE0011B05E /* CanvasScreen.framework */,
+				4C7700101F84DABE005F3E47 /* FileSystemItemsChooserScreen.framework */,
+				4C7700291F850C7F005F3E47 /* FileSystemHelper.framework */,
+				4CB9D3F61F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,10 +182,40 @@
 			children = (
 				4C51F94B1F81B9EA009096ED /* main.swift */,
 				4C0CA2F21EDAEFBD000B2F9A /* AppDelegate.swift */,
+				4C77001E1F84FED4005F3E47 /* NavigationManager.swift */,
+				4C7700201F84FF74005F3E47 /* ModulesManager.swift */,
 				4C0CA2F61EDAEFBD000B2F9A /* Assets.xcassets */,
 				4C0CA2FB1EDAEFBD000B2F9A /* Info.plist */,
 			);
 			path = CanvasFileExplorer;
+			sourceTree = "<group>";
+		};
+		4C7700111F84DABE005F3E47 /* FileSystemItemsChooserScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4C77001C1F84DADA005F3E47 /* Wireframe.swift */,
+				4C7700131F84DABE005F3E47 /* Info.plist */,
+			);
+			path = FileSystemItemsChooserScreen;
+			sourceTree = "<group>";
+		};
+		4C77002A1F850C7F005F3E47 /* FileSystemHelper */ = {
+			isa = PBXGroup;
+			children = (
+				4C7700351F850C9E005F3E47 /* FileSystemHelper.swift */,
+				4C77002C1F850C7F005F3E47 /* Info.plist */,
+			);
+			path = FileSystemHelper;
+			sourceTree = "<group>";
+		};
+		4CB9D3F71F8522E200D0225A /* SavedFilesInitialPositionsProviderModule */ = {
+			isa = PBXGroup;
+			children = (
+				4CB9D4021F8522FA00D0225A /* SavedFilesInitialPositionsProvider.swift */,
+				4CB9D4041F85239000D0225A /* FileInitialPosition.swift */,
+				4CB9D3F91F8522E200D0225A /* Info.plist */,
+			);
+			path = SavedFilesInitialPositionsProviderModule;
 			sourceTree = "<group>";
 		};
 		4CDD09131F8199CE0011B05E /* CanvasScreen */ = {
@@ -118,6 +228,7 @@
 				4CF3CED31F823E8B0015758F /* FileView.swift */,
 				4CF3CED11F823DBD0015758F /* FileView.xib */,
 				4CDD09151F8199CE0011B05E /* Info.plist */,
+				4C7700221F850C31005F3E47 /* FileInitialPosition.swift */,
 			);
 			path = CanvasScreen;
 			sourceTree = "<group>";
@@ -125,6 +236,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		4C77000D1F84DABE005F3E47 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C7700261F850C7F005F3E47 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CB9D3F31F8522E200D0225A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4CDD090F1F8199CE0011B05E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,11 +280,68 @@
 			);
 			dependencies = (
 				4CDD09181F8199CE0011B05E /* PBXTargetDependency */,
+				4C7700161F84DABE005F3E47 /* PBXTargetDependency */,
+				4C77002F1F850C7F005F3E47 /* PBXTargetDependency */,
+				4CB9D3FC1F8522E200D0225A /* PBXTargetDependency */,
 			);
 			name = CanvasFileExplorer;
 			productName = AlternativeSwift;
 			productReference = 4C0CA2EF1EDAEFBD000B2F9A /* CanvasFileExplorer.app */;
 			productType = "com.apple.product-type.application";
+		};
+		4C77000F1F84DABE005F3E47 /* FileSystemItemsChooserScreen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C77001B1F84DABE005F3E47 /* Build configuration list for PBXNativeTarget "FileSystemItemsChooserScreen" */;
+			buildPhases = (
+				4C77000B1F84DABE005F3E47 /* Sources */,
+				4C77000C1F84DABE005F3E47 /* Frameworks */,
+				4C77000D1F84DABE005F3E47 /* Headers */,
+				4C77000E1F84DABE005F3E47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FileSystemItemsChooserScreen;
+			productName = FileSystemItemsChooserScreen;
+			productReference = 4C7700101F84DABE005F3E47 /* FileSystemItemsChooserScreen.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4C7700281F850C7F005F3E47 /* FileSystemHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C7700321F850C7F005F3E47 /* Build configuration list for PBXNativeTarget "FileSystemHelper" */;
+			buildPhases = (
+				4C7700241F850C7F005F3E47 /* Sources */,
+				4C7700251F850C7F005F3E47 /* Frameworks */,
+				4C7700261F850C7F005F3E47 /* Headers */,
+				4C7700271F850C7F005F3E47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FileSystemHelper;
+			productName = FileSystemHelper;
+			productReference = 4C7700291F850C7F005F3E47 /* FileSystemHelper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4CB9D3F51F8522E200D0225A /* SavedFilesInitialPositionsProviderModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CB9D4011F8522E200D0225A /* Build configuration list for PBXNativeTarget "SavedFilesInitialPositionsProviderModule" */;
+			buildPhases = (
+				4CB9D3F11F8522E200D0225A /* Sources */,
+				4CB9D3F21F8522E200D0225A /* Frameworks */,
+				4CB9D3F31F8522E200D0225A /* Headers */,
+				4CB9D3F41F8522E200D0225A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SavedFilesInitialPositionsProviderModule;
+			productName = FilesInitialPositionsProvider;
+			productReference = 4CB9D3F61F8522E200D0225A /* SavedFilesInitialPositionsProviderModule.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		4CDD09111F8199CE0011B05E /* CanvasScreen */ = {
 			isa = PBXNativeTarget;
@@ -187,6 +376,21 @@
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Manual;
 					};
+					4C77000F1F84DABE005F3E47 = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Manual;
+					};
+					4C7700281F850C7F005F3E47 = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Manual;
+					};
+					4CB9D3F51F8522E200D0225A = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Manual;
+					};
 					4CDD09111F8199CE0011B05E = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
@@ -208,7 +412,10 @@
 			projectRoot = "";
 			targets = (
 				4C0CA2EE1EDAEFBD000B2F9A /* CanvasFileExplorer */,
+				4C77000F1F84DABE005F3E47 /* FileSystemItemsChooserScreen */,
 				4CDD09111F8199CE0011B05E /* CanvasScreen */,
+				4C7700281F850C7F005F3E47 /* FileSystemHelper */,
+				4CB9D3F51F8522E200D0225A /* SavedFilesInitialPositionsProviderModule */,
 			);
 		};
 /* End PBXProject section */
@@ -219,6 +426,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C0CA2F71EDAEFBD000B2F9A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C77000E1F84DABE005F3E47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C7700271F850C7F005F3E47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CB9D3F41F8522E200D0225A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +468,33 @@
 			files = (
 				4C0CA2F31EDAEFBD000B2F9A /* AppDelegate.swift in Sources */,
 				4C51F94C1F81B9EA009096ED /* main.swift in Sources */,
+				4C77001F1F84FED4005F3E47 /* NavigationManager.swift in Sources */,
+				4C7700211F84FF74005F3E47 /* ModulesManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C77000B1F84DABE005F3E47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C77001D1F84DADA005F3E47 /* Wireframe.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C7700241F850C7F005F3E47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C7700361F850C9E005F3E47 /* FileSystemHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CB9D3F11F8522E200D0225A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CB9D4031F8522FA00D0225A /* SavedFilesInitialPositionsProvider.swift in Sources */,
+				4CB9D4051F85239000D0225A /* FileInitialPosition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +504,7 @@
 			files = (
 				4CF3CED41F823E8B0015758F /* FileView.swift in Sources */,
 				4CDD09261F819C1C0011B05E /* ViewControllerUtilities.swift in Sources */,
+				4C7700231F850C31005F3E47 /* FileInitialPosition.swift in Sources */,
 				4CDD09241F819A830011B05E /* ViewController.swift in Sources */,
 				4CDD09201F8199FE0011B05E /* Wireframe.swift in Sources */,
 			);
@@ -257,6 +513,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4C7700161F84DABE005F3E47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C77000F1F84DABE005F3E47 /* FileSystemItemsChooserScreen */;
+			targetProxy = 4C7700151F84DABE005F3E47 /* PBXContainerItemProxy */;
+		};
+		4C77002F1F850C7F005F3E47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C7700281F850C7F005F3E47 /* FileSystemHelper */;
+			targetProxy = 4C77002E1F850C7F005F3E47 /* PBXContainerItemProxy */;
+		};
+		4CB9D3FC1F8522E200D0225A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CB9D3F51F8522E200D0225A /* SavedFilesInitialPositionsProviderModule */;
+			targetProxy = 4CB9D3FB1F8522E200D0225A /* PBXContainerItemProxy */;
+		};
 		4CDD09181F8199CE0011B05E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4CDD09111F8199CE0011B05E /* CanvasScreen */;
@@ -403,6 +674,195 @@
 			};
 			name = Release;
 		};
+		4C7700191F84DABE005F3E47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FileSystemItemsChooserScreen/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.FileSystemItemsChooserScreen;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4C77001A1F84DABE005F3E47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FileSystemItemsChooserScreen/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.FileSystemItemsChooserScreen;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4C7700331F850C7F005F3E47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FileSystemHelper/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.FileSystemHelper;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4C7700341F850C7F005F3E47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FileSystemHelper/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.FileSystemHelper;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4CB9D3FF1F8522E200D0225A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/SavedFilesInitialPositionsProviderModule/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.FilesInitialPositionsProvider;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4CB9D4001F8522E200D0225A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/SavedFilesInitialPositionsProviderModule/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jovanjovanovski.FilesInitialPositionsProvider;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		4CDD091B1F8199CE0011B05E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -483,6 +943,33 @@
 			buildConfigurations = (
 				4C0CA2FF1EDAEFBD000B2F9A /* Debug */,
 				4C0CA3001EDAEFBD000B2F9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C77001B1F84DABE005F3E47 /* Build configuration list for PBXNativeTarget "FileSystemItemsChooserScreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C7700191F84DABE005F3E47 /* Debug */,
+				4C77001A1F84DABE005F3E47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C7700321F850C7F005F3E47 /* Build configuration list for PBXNativeTarget "FileSystemHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C7700331F850C7F005F3E47 /* Debug */,
+				4C7700341F850C7F005F3E47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CB9D4011F8522E200D0225A /* Build configuration list for PBXNativeTarget "SavedFilesInitialPositionsProviderModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CB9D3FF1F8522E200D0225A /* Debug */,
+				4CB9D4001F8522E200D0225A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

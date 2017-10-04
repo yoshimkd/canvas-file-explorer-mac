@@ -12,8 +12,9 @@ public class Wireframe {
     
     public let viewController: NSViewController
     
-    public init() {
+    public init(filesInitialPositions: [FileInitialPosition]) {
         let viewController = ViewController.createFromNib()
+        viewController.filesInitialPositions = filesInitialPositions
         self.viewController = viewController
     }
     
