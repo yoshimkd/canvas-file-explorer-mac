@@ -1,4 +1,4 @@
-# canvas-file-explorer-mac
+# Canvas File Explorer for Mac
 
 1. Run the app
 2. Choose a root folder from which you want all swift files to be shown
