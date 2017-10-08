@@ -6,8 +6,6 @@
 //  Copyright © 2017 Jovan. All rights reserved.
 //
 
-import Foundation
-
 import FileSystemItemsChooserScreen
 import FilesInitialPositionsCacheModule
 import FileSystemHelper
@@ -23,9 +21,9 @@ final class ModulesManager {
     var canvasScreenWireframe: CanvasScreen.Wireframe?
     
     var savedFilesInitialPositions:
-    [FilesInitialPositionsCacheModule.FileInitialPosition]!
-    var chosenFilesInitialPositions:
-    [CanvasScreen.FileInitialPosition]!
+    Set<FilesInitialPositionsCacheModule.FileInitialPosition>!
+    var chosenFilesMaybeInitialPositions:
+    Set<CanvasScreen.FileMaybeInitialPosition>!
     
     func getFilesInitialPositions() {
         savedFilesInitialPositions =
@@ -41,42 +39,50 @@ final class ModulesManager {
                     let files =
                         FileSystemHelper.getFiles(inFileSystemItems: urls)
                     
-                    self.chosenFilesInitialPositions = files.map {
-                        file -> CanvasScreen.FileInitialPosition in
+                    self.chosenFilesMaybeInitialPositions = Set(files.map {
+                        file -> CanvasScreen.FileMaybeInitialPosition in
                         if let fileIntialPosition =
                             self.savedFilesInitialPositions.first(where: {
                                 [file = file] fileIntialPosition in
                                 return file.path ==
                                     fileIntialPosition.filePath
                             }) {
-                            return CanvasScreen.FileInitialPosition(
+                            return CanvasScreen.FileMaybeInitialPosition(
                                 filePath: fileIntialPosition.filePath,
-                                point: fileIntialPosition.point)
+                                position: CanvasScreen.FileMaybeInitialPosition
+                                    .Point(x: fileIntialPosition.position.x,
+                                           y: fileIntialPosition.position.y))
                         }
                         
-                        return CanvasScreen.FileInitialPosition(
+                        return CanvasScreen.FileMaybeInitialPosition(
                             filePath: file.path,
-                            point: nil)
-                    }
+                            position: nil)
+                    })
                     
                     presentationCompletionHandler()
                 }
         )
     }
     
-    func createCanvasScreenWireframe() {
+    func createCanvasScreenWireframe(
+        filePathSelectionHandler: @escaping (String) -> ()) {
         canvasScreenWireframe = CanvasScreen.Wireframe(
-            filesInitialPositions: chosenFilesInitialPositions,
+            filesMaybeInitialPositions: chosenFilesMaybeInitialPositions,
+            filePathSelectionHandler: filePathSelectionHandler,
             filesInitialPositionsSaver: {
                 filesInitialPositions in
                 FilesInitialPositionsCache.save(
-                    filesInitialPositions: filesInitialPositions.map {
+                    filesInitialPositions: Set(filesInitialPositions.map {
                         fileInitialPosition in
                         return FilesInitialPositionsCacheModule
                             .FileInitialPosition(
                                 filePath: fileInitialPosition.filePath,
-                                point: fileInitialPosition.point!)
-                })
+                                position: FilesInitialPositionsCacheModule
+                                    .FileInitialPosition.Point(
+                                        x: fileInitialPosition.position.x,
+                                        y: fileInitialPosition.position.y))
+                    })
+                )
         })
     }
     

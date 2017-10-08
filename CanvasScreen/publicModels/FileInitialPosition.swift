@@ -1,6 +1,6 @@
 //
 //  FileInitialPosition.swift
-//  FilesInitialPositionsProvider
+//  CanvasScreen
 //
 //  Created by Jovan Jovanovski on 10/4/17.
 //  Copyright © 2017 Jovan. All rights reserved.
@@ -9,23 +9,13 @@
 public struct FileInitialPosition: Hashable {
     
     public let filePath: String
-    public var position: Point
+    public let position: Point
     
     public struct Point {
         
-        public var x: Float
-        public var y: Float
+        public let x: Float
+        public let y: Float
         
-        public init(x: Float, y: Float) {
-            self.x = x
-            self.y = y
-        }
-        
-    }
-    
-    public init(filePath: String, position: Point) {
-        self.filePath = filePath
-        self.position = position
     }
     
     public static func ==(fileInitialPosition1: FileInitialPosition,

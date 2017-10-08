@@ -18,32 +18,33 @@ public struct FilesInitialPositionsCache {
     }
     
     public static func savedFilesInitialPositions()
-        -> [FileInitialPosition] {
+        -> Set<FileInitialPosition> {
             do {
                 let data = try Data(contentsOf: filePathsPositionsFile)
                 let jsonArray = try JSONSerialization.jsonObject(
                     with: data, options: .mutableContainers) as! [[String: Any]]
-                return jsonArray.map {
+                return Set(jsonArray.map {
                     dictionary in
                     let filePath = dictionary["filePath"] as! String
-                    let position = dictionary["position"] as! [String: CGFloat]
+                    let position = dictionary["position"] as! [String: Float]
                     
                     return FileInitialPosition(
                         filePath: filePath,
-                        point: CGPoint(x: position["x"]!, y: position["y"]!))
-                }
+                        position: FileInitialPosition.Point(
+                            x: position["x"]!, y: position["y"]!))
+                })
             } catch {
                 return []
             }
     }
     
-    public static func save(filesInitialPositions: [FileInitialPosition]) {
+    public static func save(filesInitialPositions: Set<FileInitialPosition>) {
         let dictionary =
             filesInitialPositions.map {
                 fileInitialPosition -> [String : Any] in
                 return ["filePath": fileInitialPosition.filePath,
-                        "position": ["x": fileInitialPosition.point.x,
-                                     "y": fileInitialPosition.point.y]]
+                        "position": ["x": fileInitialPosition.position.x,
+                                     "y": fileInitialPosition.position.y]]
         }
         
         let data = try! JSONSerialization.data(withJSONObject: dictionary)

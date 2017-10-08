@@ -6,7 +6,7 @@
 //  Copyright © 2017 Jovan. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 
 final class NavigationManager {
     
@@ -28,7 +28,11 @@ final class NavigationManager {
         modulesManager.createFileSystemItemsChooserScreenWireframe(
             presentationCompletionHandler: {
                 [modulesManager = modulesManager, window = window] in
-                modulesManager.createCanvasScreenWireframe()
+                modulesManager.createCanvasScreenWireframe(
+                    filePathSelectionHandler: {
+                        filePath in
+                        NSWorkspace.shared.openFile(filePath)
+                })
                 window.contentViewController =
                     modulesManager.canvasScreenWireframe!.viewController
                 window.makeKeyAndOrderFront(nil)

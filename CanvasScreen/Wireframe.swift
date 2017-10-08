@@ -6,25 +6,54 @@
 //  Copyright © 2017 Jovan. All rights reserved.
 //
 
-import Cocoa
+import AppKit
+import StateManager
 
-public class Wireframe {
+public final class Wireframe {
     
-    private let filesInitialPositionsSaver: ([FileInitialPosition]) -> ()
+    private let stateManager: StateManager
+    <ScreenState, ScreenEvent, ScreenSignals, ScreenStatesDifference>
     public let viewController: NSViewController
     
     public init(
-        filesInitialPositions: [FileInitialPosition],
-        filesInitialPositionsSaver: @escaping ([FileInitialPosition]) -> ()) {
+        filesMaybeInitialPositions: Set<FileMaybeInitialPosition>,
+        filePathSelectionHandler: @escaping (String) -> (),
+        filesInitialPositionsSaver:
+        @escaping (Set<FileInitialPosition>) -> ()) {
         let viewController = ViewController.createFromNib()
-        viewController.filesInitialPositions = filesInitialPositions
-        
-        
         self.viewController = viewController
         
-        self.filesInitialPositionsSaver = filesInitialPositionsSaver
-        viewController.filesInitialPositionsSaver = filesInitialPositionsSaver
+        let backgroundManager = BackgroundManager(
+            filesMaybeInitialPositions: filesMaybeInitialPositions,
+            filePathSelectionHandler: filePathSelectionHandler,
+            filesInitialPositionsSaver: filesInitialPositionsSaver)
         
+        let screenStatesDifferenceApplier = ScreenStatesDifferenceApplier(
+            userInterface: viewController,
+            backgroundManager: backgroundManager)
+        
+        stateManager = StateManager(
+            handlers: [
+                userInterfaceLoadedHandler,
+                filesMaybeInitialPositionsPresentationRequestHandler,
+                backgroundMagnificationChangeRequestHandler,
+                backgroundPannedHandler,
+                fileElementPannedHandler,
+                fileElementSelectedHandler,
+                saveRequestedHandler],
+            statesDifferenceCreator: ScreenStatesDifference.init,
+            applier: screenStatesDifferenceApplier.applier
+        )
+        stateManager.setup()
+        
+        viewController.eventHandler = stateManager.handle
+        backgroundManager.eventHandler = stateManager.handle
     }
     
 }
+
+extension BackgroundManager: BackgroundManagerProtocol {}
+extension ViewController: UserInterface {}
+extension ScreenState: State {}
+extension ScreenEvent: Event {}
+extension ScreenStatesDifference: StatesDifference {}

@@ -6,7 +6,7 @@
 //  Copyright © 2017 Jovan. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 
 extension ViewController {
     

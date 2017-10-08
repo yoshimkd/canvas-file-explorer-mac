@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -8,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="ViewController" customModule="CanvasScreen" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="PQb-0T-1Ed" id="y0O-Uc-gA5"/>
+                <outlet property="containerViewPanRecognizer" destination="7Eo-IR-COD" id="V91-8w-rp3"/>
                 <outlet property="view" destination="c22-O7-iKe" id="Ot2-pL-Dwb"/>
             </connections>
         </customObject>
@@ -19,6 +21,16 @@
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="PQb-0T-1Ed" userLabel="Container view">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                    <gestureRecognizers>
+                        <panGestureRecognizer delaysPrimaryMouseButtonEvents="YES" id="7Eo-IR-COD">
+                            <connections>
+                                <action selector="panHandler:" target="-2" id="O85-xG-03W"/>
+                            </connections>
+                        </panGestureRecognizer>
+                    </gestureRecognizers>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </customView>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NKe-Ha-0J1" userLabel="Save button">
                     <rect key="frame" x="405" y="-7" width="81" height="32"/>
