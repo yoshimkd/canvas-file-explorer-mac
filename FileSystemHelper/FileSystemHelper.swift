@@ -21,10 +21,12 @@ public struct FileSystemHelper {
                 (isDirectoryURL ? "directory" : "file"))
             
             if isDirectoryURL {
-                let subURLs = try! FileManager.default.contentsOfDirectory(
-                    at: url, includingPropertiesForKeys: nil)
-                print("Digging deeper")
-                return urls + getFiles(inFileSystemItems: subURLs)
+                if let subURLs = try? FileManager.default.contentsOfDirectory(
+                    at: url, includingPropertiesForKeys: nil) {
+                    print("Digging deeper")
+                    return urls + getFiles(inFileSystemItems: subURLs)
+                }
+                return urls
             }
             
             if url.pathExtension == "swift" {
